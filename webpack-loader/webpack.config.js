@@ -9,18 +9,36 @@ module.exports = {
         filename: 'js/[name].bundle.js'
     },
     module: {
-        loaders: [
+        rules: [
             {
                 test: /\.js$/,
-                loader: 'babel-loader',
-                include: path.resolve(__dirname, 'src'),
-                query: {
-                    presets: ['latest']
+                exclude: /(node_modules|bower_components)/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['latest']
+                    }
                 }
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader!postcss-loader'
+                use: [
+                    'style-loader',
+                    'css-loader?importLoaders=1',
+                    'postcss-loader'
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [{
+                    loader: "style-loader" // creates style nodes from JS strings 
+                }, {
+                    loader: "css-loader" // translates CSS into CommonJS 
+                }, {
+                    loader: "postcss-loader" // compiles Less to CSS 
+                }, {
+                    loader: "less-loader" // compiles Less to CSS 
+                }]
             }
         ]
     },
