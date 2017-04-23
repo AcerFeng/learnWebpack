@@ -186,7 +186,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(12);
+	fixUrls = __webpack_require__(13);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -455,7 +455,9 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _layer = __webpack_require__(13);
+__webpack_require__(14);
+
+var _layer = __webpack_require__(10);
 
 var _layer2 = _interopRequireDefault(_layer);
 
@@ -514,7 +516,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var App = function App() {
     var NUM = 12;
     alert(NUM);
-    console.log(_layer2.default);
+    console.log(layer);
+
+    var app = document.getElementById('app');
+    var layer = new _layer2.default();
+    app.innerHTML = layer.tpl;
 };
 
 new App();
@@ -656,8 +662,8 @@ function fromByteArray (uint8) {
 
 
 var base64 = __webpack_require__(5)
-var ieee754 = __webpack_require__(10)
-var isArray = __webpack_require__(11)
+var ieee754 = __webpack_require__(11)
+var isArray = __webpack_require__(12)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -2435,7 +2441,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(14)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
 
 /***/ }),
 /* 7 */
@@ -2481,6 +2487,12 @@ exports.push([module.i, ".flex-div {\n    display: -webkit-box;\n    display: -m
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"layer\">\n    <div>this is a layer</div>\n</div>";
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -2570,7 +2582,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -2581,7 +2593,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 
@@ -2676,7 +2688,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -2702,7 +2714,7 @@ if(false) {
 }
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 var g;

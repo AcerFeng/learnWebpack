@@ -1,4 +1,5 @@
-import tpl from './layer.less';
+import './layer.less';
+import tpl from './layer.tpl'
 
 function layer () {
     return {
