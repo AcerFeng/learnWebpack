@@ -12,7 +12,7 @@ module.exports = {
         rules: [
             {
                 test: /\.tpl$/,
-                use: ['html-loader']
+                use: ['ejs-loader']
             },
             {
                 test: /\.js$/,
@@ -43,6 +43,10 @@ module.exports = {
                 }, {
                     loader: "less-loader" // compiles Less to CSS 
                 }]
+            },
+            {
+                test: /\.(png|jpg|gif|svg)$/i,
+                use: ['file-loader']
             }
         ]
     },

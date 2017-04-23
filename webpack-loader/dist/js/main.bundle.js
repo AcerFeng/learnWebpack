@@ -186,7 +186,7 @@ var stylesInDom = {},
 	singletonElement = null,
 	singletonCounter = 0,
 	styleElementsInsertedAtTop = [],
-	fixUrls = __webpack_require__(13);
+	fixUrls = __webpack_require__(14);
 
 module.exports = function(list, options) {
 	if(typeof DEBUG !== "undefined" && DEBUG) {
@@ -455,7 +455,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-__webpack_require__(14);
+__webpack_require__(15);
 
 var _layer = __webpack_require__(10);
 
@@ -520,7 +520,10 @@ var App = function App() {
 
     var app = document.getElementById('app');
     var layer = new _layer2.default();
-    app.innerHTML = layer.tpl;
+    app.innerHTML = layer.tpl({
+        name: 'haha',
+        arr: ['nihao', 'apple', 'oppo']
+    });
 };
 
 new App();
@@ -662,8 +665,8 @@ function fromByteArray (uint8) {
 
 
 var base64 = __webpack_require__(5)
-var ieee754 = __webpack_require__(11)
-var isArray = __webpack_require__(12)
+var ieee754 = __webpack_require__(12)
+var isArray = __webpack_require__(13)
 
 exports.Buffer = Buffer
 exports.SlowBuffer = SlowBuffer
@@ -2441,7 +2444,7 @@ function isnan (val) {
   return val !== val // eslint-disable-line no-self-compare
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(15)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(16)))
 
 /***/ }),
 /* 7 */
@@ -2452,7 +2455,7 @@ exports = module.exports = __webpack_require__(0)(undefined);
 
 
 // module
-exports.push([module.i, ".layer {\n  width: 500px;\n  height: 200px;\n  background-color: gray;\n}\n.layer > div {\n  width: 400px;\n  height: 100px;\n  background-color: yellow;\n}\n.layer .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
+exports.push([module.i, ".layer {\n  width: 500px;\n  height: 200px;\n  background-color: gray;\n}\n.layer > div {\n  width: 400px;\n  height: 100px;\n  background-color: yellow;\n  background-image: url(" + __webpack_require__(11) + ");\n}\n.layer .flex {\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n}\n", ""]);
 
 // exports
 
@@ -2489,10 +2492,33 @@ exports.push([module.i, ".flex-div {\n    display: -webkit-box;\n    display: -m
 /* 10 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"layer\">\n    <div>this is a layer</div>\n</div>";
+module.exports = function (obj) {
+obj || (obj = {});
+var __t, __p = '', __j = Array.prototype.join;
+function print() { __p += __j.call(arguments, '') }
+with (obj) {
+__p += '<div class="layer">\n    <div>this is ' +
+((__t = ( name )) == null ? '' : __t) +
+' layer</div>\n\n    ';
+ for (var i=0; i < arr.length; i++) { ;
+__p += '\n        ' +
+((__t = ( arr[i] )) == null ? '' : __t) +
+'\n    ';
+ } ;
+__p += '\n</div>';
+
+}
+return __p
+}
 
 /***/ }),
 /* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "db3678bc1373c8246820cbf822d1454e.jpg";
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports) {
 
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
@@ -2582,7 +2608,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 var toString = {}.toString;
@@ -2593,7 +2619,7 @@ module.exports = Array.isArray || function (arr) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports) {
 
 
@@ -2688,7 +2714,7 @@ module.exports = function (css) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
@@ -2714,7 +2740,7 @@ if(false) {
 }
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports) {
 
 var g;

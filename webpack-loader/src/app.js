@@ -8,7 +8,10 @@ const App = function () {
 
     const app = document.getElementById('app');
     const layer = new Layer();
-    app.innerHTML = layer.tpl;
+    app.innerHTML = layer.tpl({
+        name: 'haha',
+        arr: ['nihao', 'apple', 'oppo']
+    });
 }
 
 new App();
